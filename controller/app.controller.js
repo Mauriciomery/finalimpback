@@ -23,14 +23,14 @@ operations.getFactorial = (req,res) => {
     const number = req.headers["numberfactorial"]
     if (number>=0){
         if (number==0 || number==1){
-            let factoResult = 1;
-            res.status(200).json({status: "Retorna correctamente Fibonacci", factoResult: factoResult})
+            let factoresult = 1;
+            res.status(200).json({status: "Retorna correctamente Fibonacci", factoresult: factoresult})
         }else{
-            let factoResult =1;
+            let factoresult = 1;
             for(let i=1; i<=number;i++){
-                factoResult = factoResult * i;
+                factoresult = factoresult * i;
             }
-            res.status(200).json({status: "Retorna correctamente Factorial", factoResult: factoResult})
+            res.status(200).json({status: "Retorna correctamente Factorial", factoresult: factoresult})
         }
     }else {
         res.status(400).json({status:"Error",response:"Al numero no se le puede sacar factorial"})
