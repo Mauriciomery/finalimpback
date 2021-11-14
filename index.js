@@ -11,7 +11,7 @@ app.use(cors({origin:true}))
 app.set('port',5000)
 
 //Declarando una ruta para el manejo de la API
-app.use('/api/',require('./routes/methods.route'))
+app.use('/api/',require('./routes/methodsRoutes'))
 
 
 //start server
