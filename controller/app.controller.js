@@ -37,11 +37,11 @@ operations.getFactorial = (req,res) => {
     }
 }
 operations.getAPTriangulo = (req,res) => {
-    let side1 = req.headers["side1triangule"]
-    let side2 = req.headers["side2triangule"]
-    let side3 = req.headers["side3triangule"]
+    let side1 = parseInt(req.headers["side1triangule"])
+    let side2 = parseInt(req.headers["side2triangule"])
+    let side3 = parseInt(req.headers["side3triangule"])
     if(side1>0 && side2>0 && side3>0){
-        if(side1+side2>side3 && side1+side3>side2 && side2+side3>side1){
+        if((side1+side2)>side3 && (side1+side3)>side2 && (side2+side3)>side1){
             const p = parseInt(side1) + parseInt(side2) + parseInt(side3);
             const semiP = p/2;
             const area = Math.sqrt(semiP*(semiP-side1)*(semiP-side2)*(semiP-side3))
