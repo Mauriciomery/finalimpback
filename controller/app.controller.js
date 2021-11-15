@@ -21,16 +21,16 @@ operations.getFibonacci = (req,res) => {
 operations.getFactorial = (req,res) => {
     console.log(req.headers);
     const number = req.headers["numberfactorial"]
-    if (number>=0){
+    if (number>=0 && number<=170){
         if (number==0 || number==1){
             let factoresult = 1;
-            res.status(200).json({status: "Retorna correctamente Fibonacci", factoresult: factoresult})
+            res.status(200).json({status: "Retorna correctamente factorial", factoresult: factoresult})
         }else{
             let factoresult = 1;
             for(let i=1; i<=number;i++){
                 factoresult = factoresult * i;
             }
-            res.status(200).json({status: "Retorna correctamente Factorial", factoresult: factoresult})
+            res.status(200).json({status: "Retorna correctamente factorial", factoresult: factoresult})
         }
     }else {
         res.status(400).json({status:"Error",response:"Al numero no se le puede sacar factorial"})
@@ -71,7 +71,7 @@ operations.getAPRectangulo = (req,res) => {
         const area = side1*side2;
         res.status(200).json({status: "Retorna correctamente perimetro y area", p: p, area:area})
     }else{
-        res.status(400).json({status:"Error",response:"Los lados no son numeros positivos distintos de cero"})
+        res.status(400).json({status:"Error",response:"Los lados deben de ser numeros positivos distintos de cero"})
     }
 }
 module.exports = operations
